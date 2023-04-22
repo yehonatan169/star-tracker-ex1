@@ -148,7 +148,7 @@ class Algorithm:
         stars1 = self.detect(image=image1)
         stars2 = self.detect(image=image2)
         inliner, src_inliners = self.algorithm(stars1=stars1, stars2=stars2,
-                                                         num_iterations=1000, threshold=5)
+                                                         num_iterations=1000, threshold=22)
         self.draw_results(
             img=image1, stars=src_inliners, image_name="src.png")
         self.draw_results(
