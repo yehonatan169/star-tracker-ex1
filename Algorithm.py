@@ -81,7 +81,7 @@ class Algorithm:
         matrix = cv2.getAffineTransform(src_pts, dst_pts)
         return matrix
 
-    def check_inliers(self, src_pts_original, dst_pts_original, matrix, threshold):
+    def check_inliers(self, src_pts_original, dst_pts_original, matrix, threshold, stars1, stars2):
         inliers = []
         src_inliers = []
         src_pts = list(src_pts_original)
@@ -98,7 +98,9 @@ class Algorithm:
                 transform_pt = np.dot(matrix, src_pt)
                 dist = np.sqrt((dst_pt[0] - transform_pt[0])**2 + (
                     dst_pt[1] - transform_pt[1])**2)
-                if dist < threshold:
+                r1 = stars1[i].radius
+                r2 = stars2[j].radius
+                if dist < threshold and abs(r1 - r2) < 0.1:
                     inliers.append(transform_pt)
                     src_inliers.append(src_pts[i])
                     dst_pts.remove(dst_pts[j])
@@ -136,7 +138,7 @@ class Algorithm:
                 matrix = self.make_transform(
                     src_samples_stars, dst_samples_stars)
                 crr_inliners, crr_src_inliners = self.check_inliers(
-                    src_stars, dst_stars, matrix, threshold)
+                    src_stars, dst_stars, matrix, threshold, stars1, stars2)
                 if len(crr_inliners) >= len(inliers):
                     inliers = crr_inliners
                     src_inliners = crr_src_inliners
@@ -148,7 +150,7 @@ class Algorithm:
         stars1 = self.detect(image=image1)
         stars2 = self.detect(image=image2)
         inliner, src_inliners = self.algorithm(stars1=stars1, stars2=stars2,
-                                                         num_iterations=1000, threshold=22)
+                                               num_iterations=1000, threshold=22)
         self.draw_results(
             img=image1, stars=src_inliners, image_name="src.png")
         self.draw_results(
