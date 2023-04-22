@@ -29,7 +29,7 @@ class Algorithm:
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         cv2.imwrite(image_name, gray)
         image = np.array(Image.open(image_name).resize((600, 600)))
-        radius = 20  # Replace with the radius of the circle
+        radius = 20
         for i in range(len(stars)):
             cv2.circle(image, (int(stars[i][0]), int(
                 stars[i][1])), radius, (255, 255, 255), 2)
@@ -44,7 +44,10 @@ class Algorithm:
     def detect(self, image):
         img = cv2.imread(str(image))
         img = np.array(Image.open(image).resize((600, 600)))
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        if len(img.shape) == 2:
+            gray = img
+        else:
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         circles = cv2.HoughCircles(
             gray, cv2.HOUGH_GRADIENT, 1, 20, param1=240, param2=0.5, minRadius=2, maxRadius=7)
         stars = []
@@ -145,7 +148,7 @@ class Algorithm:
         stars1 = self.detect(image=image1)
         stars2 = self.detect(image=image2)
         inliner, src_inliners = self.algorithm(stars1=stars1, stars2=stars2,
-                                                         num_iterations=1000, threshold=22)
+                                                         num_iterations=1000, threshold=5)
         self.draw_results(
             img=image1, stars=src_inliners, image_name="src.png")
         self.draw_results(
