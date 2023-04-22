@@ -12,8 +12,8 @@ for i in range(num_images):
     for j in range(num_stars_big):
         x = random.randint(0, 600)
         y = random.randint(0, 600)
-        r = random.randint(3, 7)
-        b = random.randint(200, 250)
+        r = random.randint(3, 5)
+        b = random.randint(100, 250)
         stars.append((x, y, r, b))
         cv2.circle(img1, (x, y), r, b, -1)
     index = np.random.choice(
