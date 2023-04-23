@@ -19,13 +19,21 @@ After reaserch and help from our course instructor, we got decided to use this a
 3. return inliners
 
 ## Part 2
-In this part we made the detect method in the algorithm class. Given an image it detects the stars and returns a list with x, y, r, b.
-If you can see this method in the Algorithm class 
+In this part we made the detect method in the Algorithm class. Given an image it detects the stars and returns a list with x, y, r, b.
+You can see this method in the Algorithm class 
 ```sh
 def detect(self, image):
+     ...
+        return stars
 ```
 ## Part 3
-
+In this part we made the algorithm method in the Algorithm class. Given two lists of stars, number of iterations and a threshold, it returns the stars pattern in both images.
+You can see this method in the Algorithm class 
+```sh
+def algorithm(self, stars1, stars2, num_iterations, threshold):
+...
+        return inliers, src_inliners
+```
 ## Part 4
 
 ## Installation and Run
