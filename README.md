@@ -35,7 +35,8 @@ def algorithm(self, stars1, stars2, num_iterations, threshold):
         return inliers, src_inliners
 ```
 ## Part 4
-
+In this part we will list our results of the tests that we made.
+If you want to run the yourself, then please see the _Installation and Run_ section bellow, this way you can run you own tests.
 ## Installation and Run
 Our star tracker uses these python packages: cv2, numpy, scipy.spatial, PIL.
 If you want to run the code then look at the detect.py file for example
