@@ -7,15 +7,15 @@ In this part we will exaplain how we implemented the algorithm.
 After reaserch and help from our course instructor, we got decided to use this algorithm:
 1. Get two sets of points as stars
 2. Make 1000 iterations:
-2.2 Get random star from the src set
-2.3 Get random star from the dst set
-2.4 FInd the two nearest neighbors of every star and calculate the angles, a1 a2.
-2.5 If the absulote value of a1 - a2 is less that 4 then:
+2.1. Get random star from the src set
+2.2. Get random star from the dst set
+2.3. FInd the two nearest neighbors of every star and calculate the angles, a1 a2.
+2.4. If the absulote value of a1 - a2 is less that 4 then:
     make the tranform matrix from the six point of the images 
     check inliners by using the matrix to get points from src to dst, with loop:
     if the transformed point is close to the dst point with a treshhold then add the transformed point
     to the inliners.
-2.6 If the new inliners set is bigger than the past one then the new inliners will be our inliners.
+2.5. If the new inliners set is bigger than the past one then the new inliners will be our best inliners.
 3. return inliners
 
 ## Part 2
