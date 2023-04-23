@@ -120,11 +120,23 @@ class Algorithm:
         samples_stars.append(n2)
         return samples_stars
 
+    def find_minimal_distance(self, stars):
+        min_distance = math.inf
+        for i in range(len(stars)):
+            for j in range(i+1, len(stars)):
+                distance = np.sqrt((stars[i][0] - stars[j][0])**2 + (
+                    stars[i][1] - stars[j][1])**2)
+                if distance < min_distance:
+                    min_distance = distance
+        return min_distance
+
+
     def algorithm(self, stars1, stars2, num_iterations, threshold):
         inliers = []
         src_inliners = []
         src_stars = self.stars_list_to_array(stars1)
         dst_stars = self.stars_list_to_array(stars2)
+        threshold = self.find_minimal_distance(dst_stars)+1
         for i in range(num_iterations):
             src_sample = self.random_sample(stars=src_stars, num_samples=1)[0]
             src_samples_stars = self.get_sample_stars(
