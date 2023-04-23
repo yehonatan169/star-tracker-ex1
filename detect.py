@@ -3,9 +3,4 @@ import numpy as np
 from Algorithm import *
 
 algo = Algorithm()
-# algo.run(image1='pics/fr2.jpg', image2='pics/ST_db1.png')
-# algo.run(image1='pics/1e.png', image2='pics/2e.png')
-# algo.run(image1='pics/fr1.jpg', image2='pics/fr2.jpg')
-# algo.run(image1='pics/ST_db1.png', image2='pics/ST_db2.png')
-algo.run(image1='pics/fr1.jpg', image2='pics/fr2_fliped.jpg')
-# algo.run(image1='pics/pic.JPG', image2='pics/pic2.JPG')
+dst_inliner, src_inliners = algo.run(image1='pics/fr1.jpg', image2='pics/fr2.jpg')
