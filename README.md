@@ -41,6 +41,13 @@ Here are some results we got, for more images check the results folder:
 Src Stars            |  Dst Stars
 :-------------------------:|:-------------------------:
 ![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src2.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst2.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src3.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst3.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src4.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst4.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src5.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst5.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src6.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst6.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src7.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst7.png)
+![src](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/src8.png)  |  ![dst](https://github.com/ibrahimchahine/star-tracker-ex1/blob/main/results/dst8.png)
 ## Installation and Run
 Our star tracker uses these python packages: cv2, numpy, scipy.spatial, PIL.
 If you want to run the code then look at the detect.py file for example
